@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import NProgress from "nprogress";
 import { Providers } from "./providers";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Real Estate",
@@ -14,9 +16,13 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Providers>
           <Box maxWidth="1280px" m="auto">
-            <header>Navbar</header>
+            <header>
+              <Navbar />
+            </header>
             <main>{children}</main>
-            <footer>Footer</footer>
+            <footer>
+              <Footer />
+            </footer>
           </Box>
         </Providers>
       </body>
